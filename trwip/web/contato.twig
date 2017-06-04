@@ -1,0 +1,38 @@
+{% extends "layout.twig" %}
+
+{% block conteudo %}
+    <div class="booking-criteria">
+        <h4>Entre em contato</h4>
+        <ul>
+            <li><i class="glyphicon glyphicon-ok"></i> Poderia nos avaliar?</li>
+            <li><i class="glyphicon glyphicon-ok"></i> Está tendo algum problema? </li>
+            <li><i class="glyphicon glyphicon-ok"></i> Gostaria de sugerir algo?</li>
+        </ul>
+    </div>
+    <div class="bookingform">
+        <form action="/enviar">
+            <fieldset>
+                <div class="field-separator clearfix">
+                    <label>Nome:</label>
+                    <input type="text" class="form-control" placeholder="Seu nome">
+                </div>
+                <div class="field-separator clearfix">
+                    <label>Email</label>
+                    <input type="text" class="form-control" placeholder="Seu email">
+                </div>
+                <div class="field-separator clearfix">
+                    <label>Telefone</label>
+                    <input type="text" class="form-control" placeholder="Seu telefone">
+                </div>
+                <div class="field-separator clearfix">
+                    <label>Mensagem</label>
+                    <textarea>Sua mensagem</textarea>
+                </div>
+            </fieldset>
+            <div class="clearfix">
+                <input type="submit" value="Enviar" class="t-btn btn-red">
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
