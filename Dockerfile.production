@@ -1,0 +1,22 @@
+FROM node
+
+RUN mkdir -p /web/frontend
+ADD package.json /web/package.json
+ADD config /web/config
+WORKDIR /web
+RUN cp -rf config/nginx /etc/ \
+    && yarn
+ADD frontend/package.json /web/frontend/package.json
+WORKDIR /web/frontend
+RUN yarn
+
+ADD . /web
+ADD frontend /web/frontend
+RUN yarn run build
+WORKDIR /web
+
+VOLUME /web/uploads
+VOLUME /web/frontend/dist
+VOLUME /etc/nginx
+
+CMD yarn run dev
